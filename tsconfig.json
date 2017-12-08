@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "lib" : ["es2015", "es2015.iterable", "dom"],
+        "declaration": true,
+        "experimentalDecorators": true,
+        "outDir": "./dist"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "types": [
+        "angular"
+    ],
+    "typeRoots": [
+        "node_modules/@types"
+    ]
+}

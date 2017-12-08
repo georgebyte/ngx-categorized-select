@@ -1,0 +1,23 @@
+{
+    "name": "ngx-categorized-select",
+    "version": "0.0.8",
+    "description": "A component for Angular 2+ to select categorized items.",
+    "license": "MIT",
+    "author": "jurebajt",
+    "homepage": "http://jurebajt.com",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:jurebajt/ngx-categorized-select"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "devDependencies": {
+        "@angular/core": "5.1.0",
+        "@types/angular": "1.6.39",
+        "rxjs": "5.5.5",
+        "typescript": "2.5.3"
+    },
+    "scripts": {
+        "build": "tsc"
+    }
+}
