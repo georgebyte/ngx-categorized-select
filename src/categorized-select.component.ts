@@ -120,7 +120,7 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             position: relative;
         }
         .categorized-select__list-item:last-child {
-            border-bottom: none;
+            border-bottom: 1px solid transparent;
         }
         .categorized-select__list-item:hover {
             cursor: pointer;
@@ -437,7 +437,7 @@ export class CategorizedSelectComponent implements OnInit, OnChanges, OnDestroy 
 
         if (selectedPosition < viewFrom) {
             scrollContainer.scrollTop = selectedPosition;
-        } else if (selectedPosition >= viewTo) {
+        } else if (selectedPosition + listItemHeight >= viewTo) {
             scrollContainer.scrollTop = selectedPosition - scrollContainerHeight + listItemHeight;
         }
     }
