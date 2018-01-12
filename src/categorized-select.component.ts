@@ -80,14 +80,17 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             width: 100%;
             height: 100%;
         }
+        :host *,
+        :host *:before,
+        :host *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+                 box-sizing: border-box;
+        }
         .categorized-select__container {
             position: relative;
             height: 100%;
             padding-bottom: 50px;
-        }
-        .categorize-select__container > * {
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
         }
         .categorized-select__container--search-enabled {
             padding-top: 42px;
@@ -133,6 +136,11 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             border-bottom: 1px solid #f5f5f5;
             position: relative;
         }
+        .categorized-select__list-item:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
         .categorized-select__list-item:last-child {
             border-bottom: 1px solid transparent;
         }
@@ -141,26 +149,34 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             background-color: #f5f5f5;
         }
         .categorized-select__list-item-checkbox {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 5px;
+            display: block;
+            float: left;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            margin: 0 5px 0 0;
         }
         .categorized-select__list-item-name {
-            display: inline-block;
-            vertical-align: middle;
+            display: block;
+            float: left;
             margin-right: 5px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-size: 16px;
+            line-height: 18px;
         }
         .categorized-select__list-item-description {
-            display: inline-block;
-            vertical-align: middle;
+            display: block;
+            float: left;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             color: #999999;
             font-size: 12px;
+            line-height: 18px;
         }
         .categorized-select__list-item--highlighted {
             background-color: #f5f5f5;
