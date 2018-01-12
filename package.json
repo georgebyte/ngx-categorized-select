@@ -1,6 +1,6 @@
 {
     "name": "ngx-categorized-select",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "A component for Angular 2+ to select categorized items.",
     "license": "MIT",
     "author": "jurebajt",
