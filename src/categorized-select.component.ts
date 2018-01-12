@@ -287,7 +287,7 @@ export class CategorizedSelectComponent implements OnInit, OnChanges, OnDestroy 
     toggleItem (toggledItem: Item): void {
         if (this.isItemInList(toggledItem, this.selectedItems)) {
             this.selectedItems = this.selectedItems.filter(selectedItem => {
-                return selectedItem.categoryKey !== toggledItem.categoryKey &&
+                return selectedItem.categoryKey !== toggledItem.categoryKey ||
                        selectedItem.itemValue !== toggledItem.value;
             });
             this.unselectedItems = [
@@ -296,7 +296,7 @@ export class CategorizedSelectComponent implements OnInit, OnChanges, OnDestroy 
             ];
         } else {
             this.unselectedItems = this.unselectedItems.filter(unselectedItem => {
-                return unselectedItem.categoryKey !== toggledItem.categoryKey &&
+                return unselectedItem.categoryKey !== toggledItem.categoryKey ||
                        unselectedItem.itemValue !== toggledItem.value;
             });
             this.selectedItems = [
