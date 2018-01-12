@@ -29,7 +29,7 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             <div class="categorized-select__search-container" *ngIf="selectedCategory">
                 <input class="categorized-select__search-input"
                     type="text"
-                    placeholder="Search for {{selectedCategory.name}} ..."
+                    placeholder="Search in {{selectedCategory.name}} ..."
                     #searchQueryInput
                     (keyup)="search$.next(searchQueryInput.value)">
             </div>
@@ -77,11 +77,17 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
     styles: [`
         :host {
             display: block;
+            width: 100%;
+            height: 100%;
         }
         .categorized-select__container {
             position: relative;
             height: 100%;
             padding-bottom: 50px;
+        }
+        .categorize-select__container > * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
         }
         .categorized-select__container--search-enabled {
             padding-top: 42px;
@@ -102,7 +108,16 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
         .categorized-select__search-input {
             width: 100%;
             height: 100%;
+            overflow: hidden;
             line-height: 20px;
+            background: #fff;
+            border: 1px solid #d2d2d2;
+            padding: 5px 10px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 3px 3px 3px 0 rgba(0,0,0,.05);
+            box-shadow: inset 3px 3px 3px 0 rgba(0,0,0,.05);
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         .categorized-select__lists-container {
             overflow: auto;
@@ -114,7 +129,7 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             list-style: none;
         }
         .categorized-select__list-item {
-            papadding: 5px 15px;
+            padding: 5px 15px;
             border-bottom: 1px solid #f5f5f5;
             position: relative;
         }
@@ -125,24 +140,27 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
             cursor: pointer;
             background-color: #f5f5f5;
         }
+        .categorized-select__list-item-checkbox {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
         .categorized-select__list-item-name {
-            display: block;
-            padding-right: 44px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .categorized-select__list-item-description {
-            display: block;
-            position: absolute;
-            right: 0px;
-            top: 4px;
+            display: inline-block;
+            vertical-align: middle;
             white-space: nowrap;
-            background-color: #3f547f;
-            color: white;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #999999;
             font-size: 12px;
-            padding: 1px 4px;
-            border-radius: 4px;
         }
         .categorized-select__list-item--highlighted {
             background-color: #f5f5f5;
