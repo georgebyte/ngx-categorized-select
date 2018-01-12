@@ -6,6 +6,8 @@
 
 A component for Angular 2+ to select categorized items.
 
+![ngx-categorized-select gif](images/ngx-categorized-select.gif?raw=true "ngx-categorized-select")
+
 ## How to use?
 
 First install `ngx-categorized-select` package from npm:
