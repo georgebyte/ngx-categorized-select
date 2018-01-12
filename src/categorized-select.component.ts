@@ -151,29 +151,19 @@ const HANDLED_KEY_BINDINGS = [KEY_ENTER, KEY_SPACE, KEY_UP_ARROW, KEY_DOWN_ARROW
         .categorized-select__list-item-checkbox {
             display: block;
             float: left;
-            position: relative;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            margin: 0 5px 0 0;
+            margin-left: 0;
+            margin-right: 5px;
         }
         .categorized-select__list-item-name {
             display: block;
             float: left;
             margin-right: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             font-size: 16px;
             line-height: 18px;
         }
         .categorized-select__list-item-description {
             display: block;
             float: left;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             color: #999999;
             font-size: 12px;
             line-height: 18px;
