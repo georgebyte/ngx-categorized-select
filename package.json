@@ -10,11 +10,14 @@
         "component"
     ],
     "license": "MIT",
-    "author": "jurebajt",
-    "homepage": "http://jurebajt.com",
+    "author": "George Byte (Jure Bajt)",
+    "homepage": "https://georgebyte.com",
     "repository": {
         "type": "git",
-        "url": "git@github.com:jurebajt/ngx-categorized-select"
+        "url": "git+https://github.com/georgebyte/ngx-categorized-select.git"
+    },
+    "bugs": {
+        "url": "https://github.com/georgebyte/ngx-categorized-select/issues"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
